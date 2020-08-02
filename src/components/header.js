@@ -1,8 +1,14 @@
 import React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import companyLogo from '../../static/aa_logoSq.png'
 import companyLogoText from '../../static/AA_logo_txt.png'
+import { fadeIn, fadeInUp } from 'react-animations'
+
+
+const fadeInAnimation = keyframes(fadeIn);
+const fadeInUpAnimation = keyframes(fadeInUp);
+
 
 const NavLink = styled.div`
   margin: auto 0;
@@ -11,7 +17,6 @@ const NavLink = styled.div`
     padding: 0 16px;
     text-decoration: none;
     font-weight: bold;
-
     &:hover{
       color: red;
     }
@@ -20,6 +25,7 @@ const NavLink = styled.div`
 const NavLinks = styled.div`
   margin-left: auto;
   display: flex;
+    animation: 2.5 ${fadeInUpAnimation};
 
 `
 
@@ -35,6 +41,8 @@ const Branding = styled.div`
   font-weight: bold;
   font-size: 20px;
   margin: auto 0;
+  animation: 1.5s ${fadeInAnimation};
+
 `
 const navigationQuery = graphql`
 {

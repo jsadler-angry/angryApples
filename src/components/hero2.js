@@ -46,8 +46,6 @@ const Hero2 = ({ title, backgroundImage }) => {
     <HeroWrapper backgroundImage={backgroundImage}>
       <div>
         <RichText render={title}></RichText>
-        {/* <p>{content}</p> */}
-        {/* <CTAButton className="button" size="lg">Learn More</CTAButton> */}
       </div>
     </HeroWrapper>
   )

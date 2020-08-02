@@ -1,6 +1,7 @@
 import React from 'react';
 import Hero from './hero'
 import Hero2 from './hero2'
+// import TeamGallery from './teamGallery'
 
 const SliceZone = ({ body }) => {
   console.log(body);
@@ -19,12 +20,19 @@ const SliceZone = ({ body }) => {
         if (bodyContent.type === 'hero_2') {
           return (
             <Hero2
-              backgroundImage={bodyContent.primary.background_image.url}
+              backgroundImage={bodyContent.primary.hero_2_image.url}
               title={bodyContent.primary.hero_caption}
-              // content={bodyContent.primary.hero_caption}
               key={i} />
           )
         }
+        // if (bodyContent.type === 'image_gallery') {
+        //   return (
+        //     <TeamGallery
+        //       backgroundImage={bodyContent.fields.gallery_image.url}
+        //       title={bodyContent.primary.image_captions}
+        //       key={i} />
+        //   )
+        // }
         else {
           return null;
         }

@@ -8,18 +8,18 @@
 import React from "react"
 import PropTypes from "prop-types"
 // import { StaticQuery, graphql, Link } from "gatsby"
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import Header from './header'
 import Footer from './footer'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { fadeIn } from 'react-animations'
+
 import "./layout.css"
 
-library.add(fab, faCheckSquare, faCoffee)
+const fadeInAnimation = keyframes`${fadeIn}`;
+
 
 const Main = styled.main`
-  
+  animation: 1.5s ${ fadeInAnimation};
   margin: 0 auto;
 `
 
