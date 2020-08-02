@@ -6,17 +6,23 @@ import Layout from "../components/layout"
 
 export const query = graphql`
 query PageQuery($id: String) {
-prismic {
-    allPages(id: $id) {
+ prismic {
+    allPages {
       edges {
         node {
-          page_title
-          page_content
-          page_image
-          _meta {
-            id
-            uid
+          body {
+            ... on PRISMIC_PageBodyHero_2 {
+              type
+              label
+              primary {
+                hero_2_image
+                hero_caption
+              }
+            }
           }
+          page_content
+          page_title
+          page_image
         }
       }
     }

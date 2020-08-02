@@ -1,5 +1,6 @@
 import React from 'react';
 import Hero from './hero'
+import Hero2 from './hero2'
 
 const SliceZone = ({ body }) => {
   console.log(body);
@@ -14,7 +15,17 @@ const SliceZone = ({ body }) => {
               content={bodyContent.primary.hero_content}
               key={i} />
           )
-        } else {
+        }
+        if (bodyContent.type === 'hero_2') {
+          return (
+            <Hero2
+              backgroundImage={bodyContent.primary.background_image.url}
+              title={bodyContent.primary.hero_caption}
+              // content={bodyContent.primary.hero_caption}
+              key={i} />
+          )
+        }
+        else {
           return null;
         }
       })}
